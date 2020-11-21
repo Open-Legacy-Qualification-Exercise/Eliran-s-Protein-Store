@@ -1,7 +1,6 @@
 package elirans.protein.shop;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class ItemService {
 	
 	@Autowired
-	private static Repository itemRepository;
+	private ItemRepository itemRepository;
 
 //	I used this list before I persisted it on H2 DB using JPA.
 /*	private static List<Item> items = Arrays.asList(
@@ -26,18 +25,18 @@ public class ItemService {
 	
 	public static List<Item> getAllItems(){
 		
-		List<Item> items = new ArrayList<>();
+		List<Item> items = new ArrayList<Item>();
 		itemRepository.findAll().forEach(items::add);
 		return items;
 	}
 	
-	public static Optional<Item> getItem(String id) {
+	public Optional<Item> getItem(String id) {
 		
 		return itemRepository.findById(id);
 		
 	}
 	
-	public static void addItem(Item item) {
+	public void addItem(Item item) {
 		
 		itemRepository.save(item);
 		
@@ -48,7 +47,7 @@ public class ItemService {
 		itemRepository.save(item);
 	}
 	
-	public static void deleteItem(String id) {
+	public void deleteItem(String id) {
 		
 		itemRepository.deleteById(id);
 	}

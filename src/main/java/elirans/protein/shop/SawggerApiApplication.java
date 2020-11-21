@@ -34,6 +34,7 @@ public class SawggerApiApplication {
 				.apiInfo(apiDetails());
 	}
 	
+	@SuppressWarnings("deprecation")
 	private ApiInfo apiDetails() {
 		
 		return new ApiInfo(
